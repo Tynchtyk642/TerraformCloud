@@ -2,6 +2,19 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+data "terraform_remote_state" "instance_type" {
+  backend = "remote"
+
+  config = {
+    organization = "Ant-Engineering_1"
+    workspaces = {
+      name = "Dev"
+    }
+  }
+}
+
+
 terraform {
   backend "remote" {
     hostname = "app.terraform.io"
