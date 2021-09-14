@@ -37,7 +37,7 @@ data "aws_ami" "amazon_linux" {
 
 resource "aws_instance" "CloudProject" {
   ami = data.aws_ami.amazon_linux.id
-  instance_type = data.terraform_remote_state.instance_type.config
+  instance_type = data.terraform_remote_state.instance_type.instance_type
   count = 1
 
   tags = {
