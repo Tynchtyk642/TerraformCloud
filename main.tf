@@ -12,7 +12,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "CloudProject" {
   ami = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
-  count = 1
+  count = var.count
 
   tags = {
       Name = "Terraform-EC2"
@@ -25,4 +25,8 @@ resource "aws_instance" "CloudProject" {
 
 variable "instance_type" {
   type = string
+}
+
+variable "count" {
+  type = number
 }
