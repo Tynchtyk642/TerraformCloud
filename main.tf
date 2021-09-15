@@ -33,4 +33,5 @@ variable "amount" {
 
 variable "instance_name" {
   type = string
+  default = ""
 }
