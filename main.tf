@@ -15,7 +15,7 @@ resource "aws_instance" "CloudProject" {
   count = var.amount
 
   tags = {
-      Name = "Terraform-EC2"
+      Name = var.instance_name
   }
 }
 
@@ -29,4 +29,8 @@ variable "instance_type" {
 
 variable "amount" {
   type = number
+}
+
+variable "instance_name" {
+  type = string
 }
