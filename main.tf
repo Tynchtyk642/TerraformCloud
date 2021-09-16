@@ -1,3 +1,5 @@
+
+
 resource "aws_instance" "amazon_instance" {
     count = var.number_of_instances
     ami = data.aws_ami.latest_amazon.id
